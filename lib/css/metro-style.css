@@ -1,0 +1,119 @@
+/*.content{
+	display:block;
+	position:absolute;
+	left:50%;
+}
+.block-container{
+	display:block;
+	position:relative;
+	left:-50%;
+}*/
+.block-set{
+	display:inline-block;
+	float:left;
+}
+.block{
+	display:inline-block;
+	position: relative;
+	float:left;
+	margin:1px;
+	background-color:#000;
+	background-position:center;
+	border-width: 4px;
+	border-style: solid;
+	border-color: rgba(0,0,0,0);
+	-webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; 
+	overflow:hidden;
+}
+.block:hover{
+	border-color: rgba(128,128,128,1);
+}
+.block:hover .block-fill{
+	opacity: 0;
+	-webkit-transition: opacity .2s;  /* For Safari 3.1 to 6.0 */
+	transition: opacity .2s;
+}
+.block:hover .block-image{
+	-webkit-filter: blur(0px);
+	-moz-filter: blur(0px);
+	-o-filter: blur(0px);
+	-ms-filter: blur(0px);
+	filter: blur(0px);
+	
+	-webkit-transition: blur .2s;  /* For Safari 3.1 to 6.0 */
+	transition: blur .2s;
+}
+
+.block .block-trans, .block .block-fill, .block .block-image{
+	display:block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+}
+.small{
+	width: 100px;
+	height: 100px;
+}
+.block-set.small{
+	width: 110px;
+	height: 110px;
+}
+
+.wide{
+	width: 210px;
+	height: 100px;
+}
+.block-set.wide{
+	width: 220px;
+	height: 110px;
+}
+
+.tall{
+	width: 100px;
+	height: 210px;
+}
+.block-set.tall{
+	width: 110;
+	height: 220px;
+}
+
+.large{
+	width: 210px;
+	height: 210px;
+}
+.block-set.large{
+	width: 220px;
+	height: 220px;
+}
+.block-container.large{
+	width:100%;
+	max-width:660px;
+}
+
+.block-fill{
+	background-color:#fff;
+	opacity: 0.5;
+	
+	-webkit-transition: opacity .4s;  /* For Safari 3.1 to 6.0 */
+	transition: opacity .4s;
+}
+
+.block-image{
+	
+	background-position:center;
+	
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+	
+	-webkit-transition: blur .4s;  /* For Safari 3.1 to 6.0 */
+	-moz-transition: blur .4s;
+	-o-transition: blur .4s;
+	-ms-transition: blur .4s;
+	transition: blur .4s;
+}
