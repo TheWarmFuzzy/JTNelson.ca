@@ -93,7 +93,8 @@ function block_set_2($array){
 function block_set_3($array){
 	switch(rand(0,3)){
 		case 0:
-		
+			//Small Small
+			//	 Wide
 			open_block_set("large");
 				open_block_set("wide");
 					create_block("small", "img/awesome.png", "My Title");
@@ -104,7 +105,8 @@ function block_set_3($array){
 			
 			break;
 		case 1:
-		
+			//	 Wide
+			//Small Small
 			open_block_set("large");
 				create_block("wide", "img/awesome.png", "My Title");
 				open_block_set("wide");
@@ -115,7 +117,9 @@ function block_set_3($array){
 			
 			break;
 		case 2:
-		
+			//Small
+			//		Tall
+			//Small
 			open_block_set("large");
 				open_block_set("tall");
 					create_block("small", "img/awesome.png", "My Title");
@@ -126,7 +130,9 @@ function block_set_3($array){
 			
 			break;
 		case 3:
-		
+			//		Small
+			//Tall
+			//		Small
 			open_block_set("large");
 				create_block("tall", "img/awesome.png", "My Title");
 				open_block_set("tall");
