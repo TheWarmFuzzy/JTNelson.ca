@@ -12,7 +12,7 @@ function generate_blocks(){
 	$block_count = 0;
 	if(RANDOM_BLOCKS){
 		
-		$block_count = 32;
+		$block_count = 20;
 		for($i=0;$i<$block_count;$i++){
 			$blocks[] = array("rating"=>rand(0,10));
 		}
@@ -61,56 +61,28 @@ function display_blocks(&$array){
 }
 
 function block_set_1($array){
-	?>
-
-	<div class="block-set large">
-		<span class="block large web-design">
-			<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-			<span class="block-fill"></span>
-			<span class="block-trans"></span>
-		</span>
-	</div>
-
-	<?php
+	open_block_set("large");
+		create_block("large", "img/awesome.png", "My Title");
+	close_block_set();
 }
 
 function block_set_2($array){
 	switch(rand(0,1)){
 		case 0:
-			?>
-				
-			<div class="block-set large">
-				<span class="block tall">
-					<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-					<span class="block-fill"></span>
-					<span class="block-trans"></span>
-				</span>
-				<span class="block tall">
-					<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-					<span class="block-fill"></span>
-					<span class="block-trans"></span>
-				</span>
-			</div>
-							
-			<?php
+		
+			open_block_set("large");
+				create_block("tall", "img/awesome.png", "My Title");
+				create_block("tall", "img/awesome.png", "My Title");
+			close_block_set();
+			
 			break;
 		case 1:
-			?>
-				
-			<div class="block-set large">
-				<span class="block wide">
-					<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-					<span class="block-fill"></span>
-					<span class="block-trans"></span>
-				</span>
-				<span class="block wide">
-					<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-					<span class="block-fill"></span>
-					<span class="block-trans"></span>
-				</span>
-			</div>
-							
-			<?php
+		
+			open_block_set("large");
+				create_block("wide", "img/awesome.png", "My Title");
+				create_block("wide", "img/awesome.png", "My Title");
+			close_block_set();
+			
 			break;
 		default:
 		
@@ -121,104 +93,48 @@ function block_set_2($array){
 function block_set_3($array){
 	switch(rand(0,3)){
 		case 0:
-			?>
-
-			<div class="block-set large">
-				<div class="block-set wide">
-					<span class="block small">
-						<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-						<span class="block-fill"></span>
-						<span class="block-trans"></span>
-					</span>
-					<span class="block small">
-						<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-						<span class="block-fill"></span>
-						<span class="block-trans"></span>
-					</span>
-				</div>
-				<span class="block wide">
-					<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-					<span class="block-fill"></span>
-					<span class="block-trans"></span>
-				</span>
-			</div>
-
-			<?php
+		
+			open_block_set("large");
+				open_block_set("wide");
+					create_block("small", "img/awesome.png", "My Title");
+					create_block("small", "img/awesome.png", "My Title");
+				close_block_set();
+				create_block("wide", "img/awesome.png", "My Title");
+			close_block_set();
+			
 			break;
 		case 1:
-			?>
-
-			<div class="block-set large">
-				<span class="block wide">
-					<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-					<span class="block-fill"></span>
-					<span class="block-trans"></span>
-				</span>
-				<div class="block-set wide">
-					<span class="block small">
-						<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-						<span class="block-fill"></span>
-						<span class="block-trans"></span>
-					</span>
-					<span class="block small">
-						<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-						<span class="block-fill"></span>
-						<span class="block-trans"></span>
-					</span>
-				</div>
-			</div>
-
-			<?php
+		
+			open_block_set("large");
+				create_block("wide", "img/awesome.png", "My Title");
+				open_block_set("wide");
+					create_block("small", "img/awesome.png", "My Title");
+					create_block("small", "img/awesome.png", "My Title");
+				close_block_set();
+			close_block_set();
+			
 			break;
 		case 2:
-			?>
-
-			<div class="block-set large">
-				<div class="block-set tall">
-					<span class="block small">
-						<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-						<span class="block-fill"></span>
-						<span class="block-trans"></span>
-					</span>
-					<span class="block small">
-						<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-						<span class="block-fill"></span>
-						<span class="block-trans"></span>
-					</span>
-				</div>
-				<span class="block tall">
-					<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-					<span class="block-fill"></span>
-					<span class="block-trans"></span>
-				</span>
-			</div>
-
-			<?php
+		
+			open_block_set("large");
+				open_block_set("tall");
+					create_block("small", "img/awesome.png", "My Title");
+					create_block("small", "img/awesome.png", "My Title");	
+				close_block_set();
+				create_block("tall", "img/awesome.png", "My Title");
+			close_block_set();
+			
 			break;
 		case 3:
-			?>
-
-			<div class="block-set large">
-				<span class="block tall">
-					<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-					<span class="block-fill"></span>
-					<span class="block-trans"></span>
-				</span>
-				<div class="block-set tall">
-					<span class="block small">
-						<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-						<span class="block-fill"></span>
-						<span class="block-trans"></span>
-					</span>
-					<span class="block small">
-						<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-						<span class="block-fill"></span>
-						<span class="block-trans"></span>
-					</span>
-				</div>
-			</div>
-
-			<?php
+		
+			open_block_set("large");
+				create_block("tall", "img/awesome.png", "My Title");
+				open_block_set("tall");
+					create_block("small", "img/awesome.png", "My Title");
+					create_block("small", "img/awesome.png", "My Title");
+				close_block_set();
+			close_block_set();
+			
 			break;
 		default:
 			break;
@@ -226,32 +142,54 @@ function block_set_3($array){
 }
 
 function block_set_4($array){
+	open_block_set("large");
+		create_block("small", "img/awesome.png", "My Title");
+		create_block("small", "img/awesome.png", "My Title");
+		create_block("small", "img/awesome.png", "My Title");
+		create_block("small", "img/awesome.png", "My Title");
+	close_block_set();
+}
+
+//Creates an individual project block
+function create_block($type, $image, $text){
+
+	//Class for the block (size, colour)
+	$block_class = $type;
+	
+	//Image for the block
+	$block_image = $image;
+	
+	//Title for the block
+	$block_title = $text;
+	
 	?>
-
-	<div class="block-set large">
-		<span class="block small">
-			<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-			<span class="block-fill"></span>
-			<span class="block-trans"></span>
-		</span>
-		<span class="block small">
-			<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-			<span class="block-fill"></span>
-			<span class="block-trans"></span>
-		</span>
-		<span class="block small">
-			<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-			<span class="block-fill"></span>
-			<span class="block-trans"></span>
-		</span>
-		<span class="block small">
-			<span class="block-image" style="background-image:url('img/awesome.png');"></span>
-			<span class="block-fill"></span>
-			<span class="block-trans"></span>
-		</span>
-	</div>
-
+		<a href="">
+			<span class="block <?php echo $block_class; ?>">
+				<span class="block-image" style="background-image:url('<?php echo $block_image; ?>');"></span>
+				<span class="block-fill"></span>
+				<span class="block-trans"></span>
+			</span>
+		</a>
 	<?php
+}
+
+//Creates an individual project block
+function open_block_set($type){
+
+	//Class for the block (size, colour)
+	$block_class = $type;
+	
+	//Opens a block set tag
+	echo "<div class=\"block-set $block_class\">";
+
+}
+
+//Creates an individual project block
+function close_block_set(){
+
+	//Closes a block set tag
+	echo "</div>";
+
 }
 
 ?>
