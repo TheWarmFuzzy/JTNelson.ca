@@ -45,6 +45,16 @@
 	transition: blur .2s;
 }
 
+.block:hover .block-text{
+	bottom:0px;
+	
+	-webkit-transition: bottom .2s;  /* For Safari 3.1 to 6.0 */
+	-moz-transition: bottom .2s;
+	-o-transition: bottom .2s;
+	-ms-transition: bottom .2s;
+	transition: bottom .2s;
+}
+
 .block .block-trans, .block .block-fill, .block .block-image{
 	display:block;
 	position: absolute;
@@ -101,8 +111,27 @@
 	transition: opacity .4s;
 }
 
-.block-image{
+.block-text{
+
+	text-transform: uppercase;
+	font-family: "Arial Black", Gadget, sans-serif;
 	
+	display:block;
+	position: absolute;
+	width:100%;
+	bottom:-20px;
+	background-color:#fff;
+	text-align:center;
+	opacity: 1;
+	
+	-webkit-transition: bottom .4s;  /* For Safari 3.1 to 6.0 */
+	-moz-transition: bottom .4s;
+	-o-transition: bottom .4s;
+	-ms-transition: bottom .4s;
+	transition: bottom .4s;
+}
+
+.block-image{
 	background-position:center;
 	
 	-webkit-filter: blur(5px);

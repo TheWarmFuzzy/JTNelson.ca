@@ -178,13 +178,16 @@ function create_block($type, $image, $text){
 	$block_title = $text;
 	
 	?>
+	
 		<a href="">
 			<span class="block <?php echo $block_class; ?>">
 				<span class="block-image" style="background-image:url('<?php echo $block_image; ?>');"></span>
 				<span class="block-fill"></span>
+				<span class="block-text">Hola</span>
 				<span class="block-trans"></span>
 			</span>
 		</a>
+		
 	<?php
 }
 
