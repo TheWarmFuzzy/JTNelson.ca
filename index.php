@@ -1,3 +1,12 @@
+<?php
+if (!defined('UNDER_CONSTRUCTION')) {
+    define("UNDER_CONSTRUCTION", false);
+}
+if(UNDER_CONSTRUCTION){
+	header("Location: construction.php");
+	die();
+}
+?>
 <html>
 	<head>
 		<?php require_once("lib/php/block_creator.php"); ?>
