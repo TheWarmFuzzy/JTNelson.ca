@@ -1,18 +1,16 @@
 <?php
 
 define("RANDOM_BLOCKS",true);
-define("BlOCKS_PER_SET",20);
-
-$block_dispersion = array("large"=>1,"medium"=>5,"small"=>14);
-$block_values = array("large"=>4,"medium"=>2,"small"=>1);
-$block_values = array("large"=>4,"medium"=>2,"small"=>1);
+define("ONLY_WIDE_BLOCKS",true);
+define("BlOCKS_PER_SET",15);
 
 function generate_blocks(){
 	$blocks = array();
 	$block_count = 0;
+	
 	if(RANDOM_BLOCKS){
 		
-		$block_count = 20;
+		$block_count = 15;
 		for($i=0;$i<$block_count;$i++){
 			$blocks[] = array("rating"=>rand(0,10));
 		}
@@ -25,17 +23,26 @@ function generate_blocks(){
 	
 	
 	$block_set_count = ceil($block_count / BlOCKS_PER_SET);
+	
 	$block_count = 6 * $block_set_count;
+	
 	$current_block_set = 0;
+	$increment = 1;
 	$block_sets = array();
+	
 	for($i = count($blocks) - 1; $i >= 0; $i--){
+	
 		$block_sets[$current_block_set][] = $blocks[$i];
 		
 		$current_block_set++;
+		
 		if($current_block_set == $block_count){
-			$current_block_set = $block_set_count;
+			$current_block_set = $block_set_count * $increment;
+			$increment++;
 		}
+		
 	}
+	
 	return($block_sets);
 }
 
@@ -69,20 +76,20 @@ function block_set_1($array){
 }
 
 function block_set_2($array){
-	switch(rand(0,1)){
+	switch(ONLY_WIDE_BLOCKS ? 0 : rand(0,1)){
 		case 0:
 		
 			open_block_set("large");
-				create_block("tall", "img/awesome.png", "My Title");
-				create_block("tall", "img/awesome.png", "My Title");
+				create_block("wide", "img/awesome.png", "My Title");
+				create_block("wide", "img/awesome.png", "My Title");
 			close_block_set();
 			
 			break;
 		case 1:
 		
 			open_block_set("large");
-				create_block("wide", "img/awesome.png", "My Title");
-				create_block("wide", "img/awesome.png", "My Title");
+				create_block("tall", "img/awesome.png", "My Title");
+				create_block("tall", "img/awesome.png", "My Title");
 			close_block_set();
 			
 			break;
@@ -93,7 +100,7 @@ function block_set_2($array){
 }
 
 function block_set_3($array){
-	switch(rand(0,3)){
+	switch(ONLY_WIDE_BLOCKS ? rand(0,1) : rand(0,3)){
 		case 0:
 			//Small Small
 			//	 Wide
