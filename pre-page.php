@@ -6,8 +6,6 @@
 	
 	if(UNDER_CONSTRUCTION){
 		header("Location: construction.php");
-	die();
-	
-	
-}
+		die();
+	}
 ?>

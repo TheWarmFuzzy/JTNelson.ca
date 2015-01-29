@@ -3,6 +3,30 @@ body{
 	background-color: black;
 }
 
+.contents{
+	position: relative;
+	display: inline-block;
+	height:200px;
+	width:100%;
+	text-align:center;
+}
+
+.shift-right{
+	position: absolute;
+	width:100%;
+	left:50%;
+	
+}
+
+.align-bottom{
+	bottom: 0px;
+}
+
+.shift-left{
+	position: relative;
+	left: -50%;
+}
+
 h1{
 	display:inline-block;
 	color: yellow;
@@ -10,6 +34,7 @@ h1{
 	font-family: Arial, Helvetica, sans-serif;
 	margin:0px;
 }
+
 p{
 	display:inline-block;
 	color: white;
@@ -17,6 +42,7 @@ p{
 	font-family: "Arial Black", Gadget, sans-serif;
 	margin:0px;
 }
+
 a, a:visited {
 	color: rgb(255,255,0);
 	text-decoration: none;
@@ -29,21 +55,12 @@ a:hover {
 a:active {
 	color: rgb(255,255,64);
 }
+
 .construction-tape{
-	position:absolute;
 	height:15px;
 	width:100%;
 	background-image: repeating-linear-gradient(135deg, transparent, transparent 35px, yellow 35px, yellow 70px);
 }
 
-.contents{
-	position: relative;
-	height:100px;
-}
 
-.center{
-	position:absolute;
-	left:50%;
-	margin-right:-50%;
-	transform: translate(-50%, -50%)
-}
+
