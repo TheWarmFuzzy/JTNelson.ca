@@ -1,11 +1,8 @@
 <?php
-if (!defined('UNDER_CONSTRUCTION')) {
-    define("UNDER_CONSTRUCTION", false);
-}
-if(UNDER_CONSTRUCTION){
-	header("Location: construction.php");
-	die();
-}
+
+$ROOT = dirname(__FILE__);
+include_once($ROOT.'/pre-page.php'); 
+
 ?>
 <html>
 	<head>
