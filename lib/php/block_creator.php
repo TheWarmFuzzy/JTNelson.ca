@@ -16,9 +16,11 @@ function generate_blocks(){
 		for($i=0;$i<$block_count;$i++){
 			$blocks[] = array("rating"=>rand(0,10));
 		}
+		
 	}else{
 	
 	}
+	
 	sort($blocks);
 	
 	
