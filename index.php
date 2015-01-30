@@ -12,6 +12,11 @@ include_once($ROOT.'/pre-page.php');
 		<script type="text/javascript" src="lib/js/js_cookie.js"></script>
 		<link rel="stylesheet" type="text/css" href="lib/css/metro-style.css"/>
 		<link rel="stylesheet" type="text/css" href="lib/css/custom-borders.css"/>
+        <style>
+            .content-end {
+                background-color:red;
+            }
+        </style>
 	</head>
 	<body>
 	
@@ -31,6 +36,8 @@ include_once($ROOT.'/pre-page.php');
 			<?php
 				display_blocks(generate_blocks());
 			?>
+            
+            <div class="content-end">&nbsp;</div>
 			
 		</div>
 		
