@@ -169,7 +169,7 @@ function block_set_4($array){
 function create_block($type, $image, $text){
 
 	//Class for the block (size, colour)
-	$block_class = $type;
+	$block_class = $type . " blue";
 	
 	//Image for the block
 	$block_image = $image;

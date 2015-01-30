@@ -31,7 +31,7 @@
 	
 	border-width: 5px;
 	border-style: solid;
-	border-color: rgba(0,0,0,0);
+	border-color: rgba(128,128,128,0);
 	
 	margin:0px;
 	
@@ -108,7 +108,8 @@
 	position: absolute;
 	width:100%;
 	bottom:-25px;
-	background-color:#fff;
+	color: rgb(64,64,64);
+	background-color: rgb(255,255,255);
 	text-align:center;
 	
 	-webkit-transition: bottom .4s;  /* For Safari 3.1 to 6.0 */

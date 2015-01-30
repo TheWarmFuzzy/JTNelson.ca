@@ -1,15 +1,37 @@
-.web-design{
-	border-color: rgba(0,0,0,0);
-	background-color: rgba(196,196,255,1);
+/*/////////////////////////
+//Red//////////////////////
+/////////////////////////*/
+
+.block.red{
+	border-color: rgba(128,0,0,0);
 }
-.web-design:hover{
-	border-color: rgba(128,128,255,1);
+.block.red:hover{
+	border-color: rgba(128,0,0,1);
+}
+.block.red .block-fill{
+	background-color:rgb(196,64,64);
 }
 
-.architecture{
-	border-color: rgba(0,0,0,0);
-	background-color: rgba(196,196,255,1);
+.block.red .block-text{
+	color: rgb(255,255,255);
+	background-color:rgb(196,64,64);
 }
-.architecture:hover{
-	border-color: rgba(128,128,255,1);
+
+/*/////////////////////////
+//Blue/////////////////////
+/////////////////////////*/
+
+.block.blue{
+	border-color: rgba(32,32,128,0);
+}
+.block.blue:hover{
+	border-color: rgba(32,32,128,1);
+}
+.block.blue .block-fill{
+	background-color:rgb(128,128,196);
+}
+
+.block.blue .block-text{
+	color: rgb(255,255,255);
+	background-color:rgb(128,128,196);
 }
