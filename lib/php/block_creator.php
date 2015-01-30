@@ -10,7 +10,7 @@ function generate_blocks(){
 	
 	if(RANDOM_BLOCKS){
 		
-		$block_count = 15;
+		$block_count = 6;
 		for($i=0;$i<$block_count;$i++){
 			$blocks[] = array("rating"=>rand(0,10));
 		}
@@ -198,7 +198,7 @@ function open_block_set($type){
 	$block_class = $type;
 	
 	//Opens a block set tag
-	echo "<div class=\"block-set $block_class\">";
+	echo "<span class=\"block-set $block_class\">" . "\n";
 
 }
 
@@ -206,7 +206,7 @@ function open_block_set($type){
 function close_block_set(){
 
 	//Closes a block set tag
-	echo "</div>";
+	echo "</span>" . "\n";
 
 }
 
