@@ -46,7 +46,7 @@ function generate_blocks(){
 	return($block_sets);
 }
 
-function display_blocks(&$array){
+function display_blocks($array){
 	shuffle($array);
 	for($i = 0;$i < count($array);$i++){
 		switch(count($array[$i])){
@@ -179,7 +179,7 @@ function create_block($type, $image, $text){
 	
 	?>
 	
-		<a href="">
+		<a href="" onclick="myFunction()">
 			<span class="block <?php echo $block_class; ?>">
 				<span class="block-image" style="background-image:url('<?php echo $block_image; ?>');"></span>
 				<span class="block-fill"></span>

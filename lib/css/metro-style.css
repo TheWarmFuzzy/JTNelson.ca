@@ -1,21 +1,30 @@
+/*/////////////////////////
+//Block Positioning////////
+/////////////////////////*/
+
 .content{
 	display:block;
-	max-width:660px;
-	margin:0 auto;
-	text-align:center;
+	
+	max-width:700px;
 	height:150px;
-	background-color:red;
+	
+	margin:0 auto;
+	
+	text-align:center;
+
 }
 
 .block-set{
 	display:inline-block;
-	float:left;
 }
+
+/*/////////////////////////
+//Block Styling////////////
+/////////////////////////*/
 
 .block{
 	display:block;
 	position: relative;
-	margin:0px;
 	
 	background-color:#000;
 	background-position:center;
@@ -23,6 +32,8 @@
 	border-width: 5px;
 	border-style: solid;
 	border-color: rgba(0,0,0,0);
+	
+	margin:0px;
 	
 	-webkit-background-clip: padding-box; /* for Safari */
     background-clip: padding-box; 
@@ -32,11 +43,48 @@
 .block:hover{
 	border-color: rgba(128,128,128,1);
 }
+
+.block .block-trans, .block .block-fill, .block .block-image{
+	display:inherit;
+	position: absolute;
+	
+	top: 0;
+	left: 0;
+	
+	width:100%;
+	height:100%;
+}
+
+.block-fill{
+	background-color:#fff;
+	opacity: 0.5;
+	
+	-webkit-transition: opacity .4s;  /* For Safari 3.1 to 6.0 */
+	transition: opacity .4s;
+}
+
 .block:hover .block-fill{
 	opacity: 0;
 	-webkit-transition: opacity .2s;  /* For Safari 3.1 to 6.0 */
 	transition: opacity .2s;
 }
+
+.block-image{
+	background-position:center;
+	
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+	
+	-webkit-transition: blur .4s;  /* For Safari 3.1 to 6.0 */
+	-moz-transition: blur .4s;
+	-o-transition: blur .4s;
+	-ms-transition: blur .4s;
+	transition: blur .4s;
+}
+
 .block:hover .block-image{
 	-webkit-filter: blur(0px);
 	-moz-filter: blur(0px);
@@ -44,8 +92,30 @@
 	-ms-filter: blur(0px);
 	filter: blur(0px);
 	
-	-webkit-transition: blur .2s;  /* For Safari 3.1 to 6.0 */
-	transition: blur .2s;
+	-webkit-transition: blur .4s;  /* For Safari 3.1 to 6.0 */
+	-moz-transition: blur .4s;
+	-o-transition: blur .4s;
+	-ms-transition: blur .4s;
+	transition: blur .4s;
+}
+
+.block-text{
+
+	text-transform: uppercase;
+	font-family: "Arial Black", Gadget, sans-serif;
+	
+	display:inherit;
+	position: absolute;
+	width:100%;
+	bottom:-25px;
+	background-color:#fff;
+	text-align:center;
+	
+	-webkit-transition: bottom .4s;  /* For Safari 3.1 to 6.0 */
+	-moz-transition: bottom .4s;
+	-o-transition: bottom .4s;
+	-ms-transition: bottom .4s;
+	transition: bottom .4s;
 }
 
 .block:hover .block-text{
@@ -58,14 +128,10 @@
 	transition: bottom .2s;
 }
 
-.block .block-trans, .block .block-fill, .block .block-image{
-	display:block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width:100%;
-	height:100%;
-}
+/*/////////////////////////
+//Block Sizing/////////////
+/////////////////////////*/
+
 .small{
 	width: 100px;
 	height: 100px;
@@ -101,50 +167,7 @@
 	width: 220px;
 	height: 220px;
 }
-.block-container.large{
-	width:100%;
-	max-width:660px;
-}
 
-.block-fill{
-	background-color:#fff;
-	opacity: 0.5;
-	
-	-webkit-transition: opacity .4s;  /* For Safari 3.1 to 6.0 */
-	transition: opacity .4s;
-}
-
-.block-text{
-
-	text-transform: uppercase;
-	font-family: "Arial Black", Gadget, sans-serif;
-	
-	display:inherit;
-	position: absolute;
-	width:100%;
-	bottom:-25px;
-	background-color:#fff;
-	text-align:center;
-	
-	-webkit-transition: bottom .4s;  /* For Safari 3.1 to 6.0 */
-	-moz-transition: bottom .4s;
-	-o-transition: bottom .4s;
-	-ms-transition: bottom .4s;
-	transition: bottom .4s;
-}
-
-.block-image{
-	background-position:center;
-	
-	-webkit-filter: blur(5px);
-	-moz-filter: blur(5px);
-	-o-filter: blur(5px);
-	-ms-filter: blur(5px);
-	filter: blur(5px);
-	
-	-webkit-transition: blur .4s;  /* For Safari 3.1 to 6.0 */
-	-moz-transition: blur .4s;
-	-o-transition: blur .4s;
-	-ms-transition: blur .4s;
-	transition: blur .4s;
-}
+/*/////////////////////////
+//Mobile Formatting////////
+/////////////////////////*/
