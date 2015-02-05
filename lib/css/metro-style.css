@@ -60,12 +60,19 @@
 	opacity: 0.5;
 	
 	-webkit-transition: opacity .4s;  /* For Safari 3.1 to 6.0 */
+	-moz-transition: opacity .4s;
+	-o-transition: opacity .4s;
+	-ms-transition: opacity .4s;
 	transition: opacity .4s;
 }
 
 .block:hover .block-fill{
 	opacity: 0;
+	
 	-webkit-transition: opacity .2s;  /* For Safari 3.1 to 6.0 */
+	-moz-transition: opacity .2s;
+	-o-transition: opacity .2s;
+	-ms-transition: opacity .2s;
 	transition: opacity .2s;
 }
 

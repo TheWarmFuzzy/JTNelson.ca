@@ -179,7 +179,7 @@ function create_block($type, $image, $text){
 	
 	?>
 	
-		<a href="" onclick="myFunction()">
+		<a href="#project" onclick="myFunction()">
 			<span class="block <?php echo $block_class; ?>">
 				<span class="block-image" style="background-image:url('<?php echo $block_image; ?>');"></span>
 				<span class="block-fill"></span>

@@ -41,6 +41,12 @@ include_once($ROOT.'/pre-page.php');
 			?>
 			
 		</div>
+		<div class="overlay">
+			<div id="project" class="content">
+				<a href="#" class="button"/>
+			</div>
+			<a href="#" class="mask"/>
+		</div>
 		
 	</body>
 </html>
