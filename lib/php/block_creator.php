@@ -8,6 +8,8 @@
 	defined("RANDOM_BLOCKS") or define("RANDOM_BLOCKS",false);
 	defined("ONLY_WIDE_BLOCKS") or define("ONLY_WIDE_BLOCKS",true);
 	defined("BlOCKS_PER_SET") or define("BlOCKS_PER_SET",15);
+	defined("PROJECT_DIRECTORY") or define("PROJECT_DIRECTORY","projects/");
+	defined("PROJECT_ICON_DIRECTORY") or define("PROJECT_ICON_DIRECTORY", PROJECT_DIRECTORY . "project-icons/");
 
 	///////////////////////////
 	//Main Code////////////////
@@ -183,7 +185,7 @@
 		$block_class = $type . " " . $color;
 		
 		//Image for the block
-		$block_image = "projects/project-icons/" . $image;
+		$block_image = PROJECT_ICON_DIRECTORY . $image;
 		
 		//Title for the block
 		$block_title = $text;

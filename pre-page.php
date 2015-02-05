@@ -16,11 +16,13 @@
 	define("RANDOM_BLOCKS",false);
 	define("ONLY_WIDE_BLOCKS",false);
 	define("BlOCKS_PER_SET",11);
-	
+	define("PROJECT_DIRECTORY","projects/");
+	define("PROJECT_ICON_DIRECTORY", PROJECT_DIRECTORY . "project-icons/");
 	
 	///////////////////////////
 	//P-Reader Page Constants//
 	///////////////////////////
 	
 	define("PROJECT_LIST","project_list.js")
+	
 ?>
