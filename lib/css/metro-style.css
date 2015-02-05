@@ -117,7 +117,7 @@
 	display:inherit;
 	position: absolute;
 	width:100%;
-	bottom:-25px;
+	bottom:-50px;
 	color: rgb(64,64,64);
 	background-color: rgb(255,255,255);
 	text-align:center;
@@ -150,13 +150,6 @@
 	float:left;
 }
 
-/*Text was too high on small blocks*/
-.block.small .block-text{
-	bottom:-50px;
-}
-.block.small:hover .block-text{
-	bottom:0px;
-}
 
 /*/////////////////////////
 //Block Sizing/////////////
