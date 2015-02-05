@@ -1,7 +1,8 @@
 <?php
 
 $ROOT = dirname(__FILE__);
-include_once($ROOT.'/pre-page.php'); 
+include_once($ROOT.'/pre-page.php');
+require_once($ROOT.'/lib/php/project_reader.php'); 
 
 ?>
 <html>
@@ -22,27 +23,24 @@ include_once($ROOT.'/pre-page.php');
 	<body>
 	
 		<?php
-			
+			$js_enabled = false;
 			if(isset($_COOKIE["js_enabled"])){
 				if($_COOKIE["js_enabled"] == true){
 					$js_enabled = true;
-				}else{
-					$js_enabled = false;
 				}
-			}else{
-				$js_enabled = false;
 			}
 		?>
 		
 		<div class="content">
 		
 			<?php
-				display_blocks(generate_blocks());
+				display_blocks(generate_blocks(getProjects()));
 			?>
 			
 		</div>
 		<div class="overlay">
 			<div id="project" class="content">
+				
 				<a href="#" class="button"/>
 			</div>
 			<a href="#" class="mask"/>

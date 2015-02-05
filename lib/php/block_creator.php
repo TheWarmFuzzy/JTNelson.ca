@@ -1,22 +1,24 @@
 <?php
 
-define("RANDOM_BLOCKS",true);
+define("RANDOM_BLOCKS",false);
 define("ONLY_WIDE_BLOCKS",true);
 define("BlOCKS_PER_SET",15);
 
-function generate_blocks(){
+function generate_blocks($blk){
 	$blocks = array();
 	$block_count = 0;
 	
 	if(RANDOM_BLOCKS){
 		
-		$block_count = 6;
+		$block_count = 13;
 		for($i=0;$i<$block_count;$i++){
-			$blocks[] = array("rating"=>rand(0,10));
+			$blocks[] = array("rating"=>rand(0,10),"title"=>"Hola","color"=>"blue","image"=>"test.png","link"=>"#");
 		}
 		
 	}else{
 	
+		$blocks = $blk["projects"];
+		$block_count = count($blocks);
 	}
 	
 	sort($blocks);
@@ -71,7 +73,7 @@ function display_blocks($array){
 
 function block_set_1($array){
 	open_block_set("large");
-		create_block("large", "img/awesome.png", "My Title");
+		create_block("large", $array[0]["image"], $array[0]["title"], $array[0]["color"]);
 	close_block_set();
 }
 
@@ -80,16 +82,16 @@ function block_set_2($array){
 		case 0:
 		
 			open_block_set("large");
-				create_block("wide", "img/awesome.png", "My Title");
-				create_block("wide", "img/awesome.png", "My Title");
+				create_block("wide", $array[0]["image"], $array[0]["title"], $array[0]["color"]);
+				create_block("wide", $array[1]["image"], $array[1]["title"], $array[1]["color"]);
 			close_block_set();
 			
 			break;
 		case 1:
 		
 			open_block_set("large");
-				create_block("tall", "img/awesome.png", "My Title");
-				create_block("tall", "img/awesome.png", "My Title");
+				create_block("tall", $array[0]["image"], $array[0]["title"], $array[0]["color"]);
+				create_block("tall", $array[1]["image"], $array[1]["title"], $array[1]["color"]);
 			close_block_set();
 			
 			break;
@@ -106,10 +108,10 @@ function block_set_3($array){
 			//	 Wide
 			open_block_set("large");
 				open_block_set("wide");
-					create_block("small", "img/awesome.png", "My Title");
-					create_block("small", "img/awesome.png", "My Title");
+					create_block("small", $array[1]["image"], $array[1]["title"], $array[1]["color"]);
+					create_block("small", $array[1]["image"], $array[2]["title"], $array[2]["color"]);
 				close_block_set();
-				create_block("wide", "img/awesome.png", "My Title");
+				create_block("wide", $array[0]["image"], $array[0]["title"], $array[0]["color"]);
 			close_block_set();
 			
 			break;
@@ -117,10 +119,10 @@ function block_set_3($array){
 			//	 Wide
 			//Small Small
 			open_block_set("large");
-				create_block("wide", "img/awesome.png", "My Title");
+				create_block("wide", $array[0]["image"], $array[0]["title"], $array[0]["color"]);
 				open_block_set("wide");
-					create_block("small", "img/awesome.png", "My Title");
-					create_block("small", "img/awesome.png", "My Title");
+					create_block("small", $array[1]["image"], $array[1]["title"], $array[1]["color"]);
+					create_block("small", $array[2]["image"], $array[2]["title"], $array[2]["color"]);
 				close_block_set();
 			close_block_set();
 			
@@ -131,10 +133,10 @@ function block_set_3($array){
 			//Small
 			open_block_set("large");
 				open_block_set("tall");
-					create_block("small", "img/awesome.png", "My Title");
-					create_block("small", "img/awesome.png", "My Title");	
+					create_block("small", $array[1]["image"], $array[1]["title"], $array[1]["color"]);
+					create_block("small", $array[2]["image"], $array[2]["title"], $array[2]["color"]);	
 				close_block_set();
-				create_block("tall", "img/awesome.png", "My Title");
+				create_block("tall", $array[0]["image"], $array[0]["title"], $array[0]["color"]);
 			close_block_set();
 			
 			break;
@@ -143,10 +145,10 @@ function block_set_3($array){
 			//Tall
 			//		Small
 			open_block_set("large");
-				create_block("tall", "img/awesome.png", "My Title");
+				create_block("tall", $array[0]["image"], $array[0]["title"], $array[0]["color"]);
 				open_block_set("tall");
-					create_block("small", "img/awesome.png", "My Title");
-					create_block("small", "img/awesome.png", "My Title");
+					create_block("small", $array[1]["image"], $array[1]["title"], $array[1]["color"]);
+					create_block("small", $array[2]["image"], $array[2]["title"], $array[2]["color"]);
 				close_block_set();
 			close_block_set();
 			
@@ -158,32 +160,43 @@ function block_set_3($array){
 
 function block_set_4($array){
 	open_block_set("large");
-		create_block("small", "img/awesome.png", "My Title");
-		create_block("small", "img/awesome.png", "My Title");
-		create_block("small", "img/awesome.png", "My Title");
-		create_block("small", "img/awesome.png", "My Title");
+		create_block("small", $array[0]["image"], $array[0]["title"], $array[0]["color"]);
+		create_block("small", $array[1]["image"], $array[1]["title"], $array[1]["color"]);
+		create_block("small", $array[2]["image"], $array[2]["title"], $array[2]["color"]);
+		create_block("small", $array[3]["image"], $array[3]["title"], $array[3]["color"]);
 	close_block_set();
 }
 
 //Creates an individual project block
-function create_block($type, $image, $text){
+function create_block($type, $image, $text, $color, $link = ""){
 
 	//Class for the block (size, colour)
-	$block_class = $type . " blue";
+	$block_class = $type . " " . $color;
 	
 	//Image for the block
-	$block_image = $image;
+	$block_image = "projects/project-icons/" . $image;
 	
 	//Title for the block
 	$block_title = $text;
 	
-	?>
+	if(true){
+		?>
 	
-		<a href="#project" onclick="myFunction()">
+		<a href="#project" onclick="myFunction( <?php echo $link; ?> )">
+		
+		<?php
+	}else{
+		?>
+	
+		<a href="<?php echo $link; ?>">
+		
+		<?php
+	}
+	?>
 			<span class="block <?php echo $block_class; ?>">
 				<span class="block-image" style="background-image:url('<?php echo $block_image; ?>');"></span>
 				<span class="block-fill"></span>
-				<span class="block-text">Hola</span>
+				<span class="block-text"> <?php echo $block_title; ?> </span>
 				<span class="block-trans"></span>
 			</span>
 		</a>

@@ -18,6 +18,8 @@
 	display:inline-block;
 }
 
+
+
 /*/////////////////////////
 //Block Styling////////////
 /////////////////////////*/
@@ -39,6 +41,7 @@
     background-clip: padding-box; 
 	overflow:hidden;
 }
+
 
 .block:hover{
 	border-color: rgba(128,128,128,1);
@@ -118,6 +121,7 @@
 	color: rgb(64,64,64);
 	background-color: rgb(255,255,255);
 	text-align:center;
+	text-decoration:none;
 	
 	-webkit-transition: bottom .4s;  /* For Safari 3.1 to 6.0 */
 	-moz-transition: bottom .4s;
@@ -134,6 +138,24 @@
 	-o-transition: bottom .2s;
 	-ms-transition: bottom .2s;
 	transition: bottom .2s;
+}
+
+
+/*/////////////////////////
+//Edge Cases///////////////
+/////////////////////////*/
+
+/*Small blocks were stacking within block sets*/
+.block-set .block.small{
+	float:left;
+}
+
+/*Text was too high on small blocks*/
+.block.small .block-text{
+	bottom:-50px;
+}
+.block.small:hover .block-text{
+	bottom:0px;
 }
 
 /*/////////////////////////
