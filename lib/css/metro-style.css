@@ -150,6 +150,11 @@
 	float:left;
 }
 
+/*Tall blocks were stacking within block sets*/
+.block-set .block.tall{
+	display:inline-block;
+	float:right;
+}
 
 /*/////////////////////////
 //Block Sizing/////////////
